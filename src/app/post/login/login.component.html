@@ -1,0 +1,36 @@
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-12 login-form-2">
+            <h3>Posts Application</h3>
+            <form [formGroup]="formulary" (ngSubmit)="submit()">
+                <div class="form-group">
+                    <div class="form-check additional-text">
+                        <input class="form-check-input" type="checkbox" value="" formControlName="anonymousCheck">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Login as anonymous user
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                        [ngClass]="{ 'is-invalid': isSubmitted && form.username.errors }"
+                        placeholder="Please Type the Username" formControlName="username">
+                    <div class="invalid-feedback">
+                        Type the Username.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': isSubmitted && form.password.errors }"
+                        placeholder="Please type the password" formControlName="password">
+                    <div class="invalid-feedback">
+                        Type the Password.
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" class="btnSubmit" value="Login" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

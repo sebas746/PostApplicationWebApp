@@ -1,0 +1,16 @@
+.main-container {
+    margin: 3%;
+}
+
+.btnSubmit
+{
+    width: 80%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+
+.selecter {
+    padding-bottom: 20px;
+}

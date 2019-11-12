@@ -2,8 +2,15 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+declare var data: any;
+
 export const environment = {
-  production: false
+  production: false,
+
+  GetPosts: data.basePath + 'api/post/',
+  GetPendingPosts: data.basePath + 'api/post/',
+  CheckUser: data.basePath + 'api/user/CheckUser/',
+  CreatePost: data.basePath + 'api/post/createPost/'
 };
 
 /*
