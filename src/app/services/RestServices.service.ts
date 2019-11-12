@@ -5,6 +5,7 @@ import { Post } from '../models/post.model';
 import { PostState } from '../models/postState.model';
 import { User } from '../models/user.model';
 import { Observable } from 'rxjs';
+import { PostDTO } from '../models/postDTO.model';
 
 @Injectable({
     providedIn: 'root'
@@ -36,9 +37,25 @@ export class RestService {
         return this.http.post<User>(url, user);
     }
 
-    createPost(post: Post) {
+    createPost(postDTO: PostDTO) {        
         let url = environment.CreatePost;
-        this.http.post<Post>(url, post)
+        this.http.post<Post>(url, postDTO)
+            .subscribe(response =>
+                this.getPosts()
+            );
+    }
+
+    deletePost(postId: number) {
+        let url = environment.DeletePost + postId;
+        this.http.delete<Post>(url)
+            .subscribe(response =>
+                this.getPosts()
+            );
+    }
+
+    updatePost(post: Post) {
+        let url = environment.UpdatePost;
+        this.http.put<Post>(url, post)
             .subscribe(response =>
                 this.getPosts()
             );

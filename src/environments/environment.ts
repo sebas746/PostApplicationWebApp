@@ -10,7 +10,9 @@ export const environment = {
   GetPosts: data.basePath + 'api/post/',
   GetPendingPosts: data.basePath + 'api/post/',
   CheckUser: data.basePath + 'api/user/CheckUser/',
-  CreatePost: data.basePath + 'api/post/createPost/'
+  CreatePost: data.basePath + 'api/post/CreateNewPost',
+  DeletePost: data.basePath + 'api/post/',
+  UpdatePost: data.basePath + 'api/post/'
 };
 
 /*

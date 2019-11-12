@@ -27,6 +27,10 @@ export class PostListComponent implements OnInit {
     console.log(post);
   }
 
+  deletePost(post: Post) {
+    this.restService.deletePost(post.postId);
+  }
+
   createPost() {
     this.router.navigateByUrl("createPost");
   }

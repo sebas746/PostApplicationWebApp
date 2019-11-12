@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from 'src/app/models/post.model';
 import { User } from 'src/app/models/user.model';
+import { PostDTO } from 'src/app/models/postDTO.model';
 
 @Component({
   selector: 'app-post-create',
@@ -38,15 +39,13 @@ export class PostCreateComponent implements OnInit {
       return;
     }
 
-    let post = new Post(0,
+    let postDTO = new PostDTO(
       this.formulary.get("postTitle").value,
       this.formulary.get("postText").value,
-      null,
-      null,
-      this.currentUser
+      this.currentUser.username
       );
     
-    this.restService.createPost(post);
+    this.restService.createPost(postDTO);
    
   }
 }
